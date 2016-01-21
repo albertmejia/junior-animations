@@ -1,0 +1,136 @@
+/**********
+base styles
+**********/
+svg {
+    width: 50%;
+}
+
+.strokes {
+    display:inline;
+    fill:none;
+    stroke:#000000;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+}
+
+.diamond .strokes,
+.diamond-end .strokes,
+.spin05 .strokes,
+.spin1 .strokes,
+.spin15 .strokes,
+.spin2 .strokes,
+.spin25 .strokes,
+.spin_3 .strokes,
+.spin35 .strokes {
+    visibility: hidden;
+}
+
+.sparkle .strokes {
+    opacity: 1;
+}
+
+.diamond .strokes:nth-of-type(1),
+.diamond .strokes:nth-of-type(3), 
+.diamond .strokes:nth-of-type(6) {
+    stroke-dasharray: 84.9;
+    stroke-dashoffset: -85;
+}
+ 
+.diamond .strokes:nth-of-type(4) {
+    stroke-dasharray: 84.9;
+    stroke-dashoffset: 85;
+}
+
+.diamond .strokes:nth-of-type(2) {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+}
+
+.diamond .strokes:nth-of-type(5) {
+    stroke-dasharray: 60;
+    stroke-dashoffset: -60;
+}
+
+/**********
+ animations
+**********/
+
+.diamond .strokes {
+    animation: diamond .417s;
+    animation-delay: .0834s;
+}
+
+.spin05 .strokes {
+    animation: show .0417s;
+    animation-delay: .459s;
+}
+
+.spin1 .strokes {
+    animation: show .0417s;
+    animation-delay: .5;
+}
+
+.spin15 .strokes {
+    animation: show .0417s;
+    animation-delay: .542s;
+}
+
+.spin2 .strokes {
+    animation: show .0417s;
+    animation-delay: .584s;
+}
+
+.spin25 .strokes {
+    animation: show .0417s;
+    animation-delay: .626s;
+}
+
+.spin_3 .strokes {
+    animation: show .0417s;
+    animation-delay: .667s;
+}
+.spin35 .strokes {
+    animation: show .0417s;
+    animation-delay: .709s;
+}
+
+
+.diamond-end .strokes {
+    animation: show .0417s forwards;
+    animation-delay: .751s;
+}
+
+.sparkle .strokes {
+    animation: sparkle 1s steps(1,end) forwards;
+}
+
+/**********
+ keyframes
+**********/
+
+@keyframes diamond {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes show {
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes sparkle {
+    0%, 70.9% {
+        opacity: 0;
+    }
+    58.4%, 83.4% {
+        opacity: 1;
+    }
+    
+}

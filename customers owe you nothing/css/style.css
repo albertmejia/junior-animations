@@ -1,0 +1,44 @@
+/**********
+base styles
+**********/
+
+svg {
+    width: 50%;
+}
+
+.strokes {
+    fill:none;
+    stroke:#000000;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    transform-origin: 50% 50%;
+}
+
+/**********
+ animation
+**********/
+
+.circle .strokes {
+    stroke-dashoffset: -377;
+    stroke-dasharray: 377;
+    transform: rotate(-45deg);
+    animation: reveal .8s linear forwards;
+}
+
+.slash .strokes {
+    stroke-dashoffset: -170;
+    stroke-dasharray: 170;
+    animation: reveal .75s linear forwards;
+    animation-delay: .1s;
+}
+
+/**********
+ keyframes
+**********/
+@keyframes reveal {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

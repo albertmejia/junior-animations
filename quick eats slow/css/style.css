@@ -1,0 +1,102 @@
+/**********
+base styles
+**********/
+
+svg {
+    width: 50%;
+}
+
+.top {
+    transform-origin: left bottom;
+}
+
+.bottom {
+    transform-origin: left top;
+}
+
+.top,
+.bottom,
+.circle,
+.line {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.top,
+.bottom {
+    stroke-linejoin: round;
+    visibility: hidden;
+}
+
+.circle {
+    stroke-dasharray: 258.84;
+    stroke-dashoffset: -258.84;
+}
+
+.line {
+    display: inline;
+    stroke-linejoin: round;
+    stroke-dasharray: 84;
+    stroke-dashoffset: -83.9;
+}
+
+/**********
+ animation
+**********/
+.top {
+    animation: up .417s linear forwards;
+    animation-delay: .626s;
+}
+
+.bottom {
+    animation: down .417s linear forwards;
+    animation-delay: .626s;
+}
+
+.circle {
+    animation: draw .667s linear forwards;
+}
+
+.line {
+    animation: draw-line .61s linear forwards;
+}
+
+/**********
+ keyframes
+**********/
+
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes draw-line {
+    100% {
+        stroke-dashoffset: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        visibility: visible;
+        transform: rotate(0);
+    }
+}
+
+@keyframes down {
+    0% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        visibility: visible;
+        transform: rotate(0);
+    }
+}
